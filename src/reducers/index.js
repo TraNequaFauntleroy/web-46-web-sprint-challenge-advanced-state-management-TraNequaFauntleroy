@@ -30,9 +30,12 @@ const reducer = (state = initialState, action)=> {
                 error: action.payload
             })
         case(ADD_SMURF):
+            const newSmurf = {
+                ...action.payload
+            }
             return ({
                 ...state, 
-                smurfs:[...state.smurfs, action.payload],
+                smurfs:[...state.smurfs, newSmurf],
                 isLoading: false,
                 error: ''
             })

@@ -10,11 +10,12 @@ import logger from 'redux-logger'
 
 import "./index.css";
 import App from "./App";
+import { applyMiddleware } from "redux";
 
 const { worker } = require('./mocks/browser');
 worker.start();
 
-const store = createStore(reducer)
+const store = createStore(reducer, applyMiddleware(thunk, logger))
 
 const rootElement = document.getElementById("root");
 

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 
  const SmurfList = (props)=> {
-    const smurfs = props.smurfs;
+    const smurf = props.smurf;
     const isLoading = false;
     const testSmurf = {
         id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
@@ -21,7 +21,7 @@ import { connect } from 'react-redux';
 
     return(<div className="listContainer">
         {
-            props.smurfs.map(smurf => <Smurf smurf={testSmurf}/> )
+            props.smurfs.map(smurf => <Smurf smurf={smurf}/> )
         }
         
     </div>);
